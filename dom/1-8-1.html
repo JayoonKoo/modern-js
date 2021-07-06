@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body >
+		<div class="notification"></div>
+    <script>
+      showNotification({
+        top: 10, // 창의 상단에서 10px 떨어진 위치에 표시합니다(기본값은 0px).
+        right: 10, // 창의 오른쪽 가장자리에서 10px 떨어진 위치에 표시합니다(기본값은 0px).
+        html: "Hello!", // 알림의 HTML입니다.
+        className: "welcome", // div에 대한 추가 클래스입니다(선택 사항).
+      });
+
+			function showNotification({top, right, html, className}) {
+				let notification = document.querySelector('.notification');
+				notification.style.position = 'absolute';
+				notification.style.top = `${top}px`;
+				notification.style.right = `${right}px`;
+				notification.innerHTML = html;
+				notification.classList.add('welcome');
+			}
+    </script>
+  </body>
+</html>
