@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+		let ulElem = document.createElement('ul');
+		while(d = prompt("리스트를 입력하세요")) {
+			li = document.createElement('li');
+			li.innerText = d;
+			ulElem.append(li);
+		}
+		document.body.append(ulElem);
+	</script>
+</body>
+</html>
