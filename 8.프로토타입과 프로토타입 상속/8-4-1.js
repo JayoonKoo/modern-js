@@ -1,15 +1,18 @@
-let dictionary = Object.create(null);
+let dictionary = Object.create(null, {
+  toString: { // toString 프로퍼티를 정의합니다.
+    value() { // value는 함수입니다.
+      return Object.keys(this).join();
+    }
+  }
+});
 
-// dictionary.toString 메서드를 추가하는 코드
-
-// 데이터를 추가합니다.
 dictionary.apple = "Apple";
-dictionary.__proto__ = "test"; // __proto__는 여기서 일반적인 프로퍼티 키입니다.
+dictionary.__proto__ = "test";
 
-// 반복문에는 apple과 __proto__ 만 있습니다.
+// apple과 __proto__는 반복문 안에 있습니다.
 for(let key in dictionary) {
-  alert(key); // "apple" 다음 "__proto__"입니다.
+  console.log(key); // "apple" 다음 "__proto__"가 있습니다.
 }
 
-// toString이 동작하는 부분입니다.
-alert(dictionary); // "apple,__proto__"
+// toString에 의해 쉼표로 구분된 프로퍼티 목록
+console.log(dictionary.toString()); // "apple,__proto__"
